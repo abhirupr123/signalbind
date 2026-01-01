@@ -1,14 +1,14 @@
-# 📱 Telco-Verified Consent Receipt for Secure Onboarding
+# 📱 SignalBind - Telco-Verified Consent Receipt
 
 ## 🚀 Overview
 Digital platforms like UPI apps, wallets, and microloan services rely heavily on mobile numbers and OTPs for user verification. However, mobile numbers are frequently recycled or reassigned, especially in prepaid-heavy markets. This creates a blind spot where fraudsters can hijack dormant accounts or impersonate users.
 
-This project implements a **Telco-Verified Consent Receipt** system using **GSMA Open Gateway APIs via Nokia Network-as-Code**. It ensures that user consent is tied to the rightful SIM holder, reducing fraud and improving trust in digital financial services.
+SignalBind implements a **Telco-Verified Consent Receipt** system using **GSMA Open Gateway APIs via Nokia Network-as-Code**. It ensures that user consent is tied to the rightful SIM holder, reducing fraud and improving trust in digital financial services.
 
 ---
 
-## 🌍 What This Project Actually Is
-This project is a **trust layer for digital onboarding**. Instead of relying only on OTPs or basic KYC checks, it introduces a **telco-verified consent receipt**—a digital proof that the person giving consent is the rightful owner of the SIM and phone number at that moment.
+## 🌍 What SignalBind Actually Is
+SignalBind is a **trust layer for digital onboarding**. Instead of relying only on OTPs or basic KYC checks, it introduces a **telco-verified consent receipt**—a digital proof that the person giving consent is the rightful owner of the SIM and phone number at that moment.
 
 Think of it as a **network-signed certificate of identity**: when someone signs up for a loan, wallet, or UPI app, the telecom operator confirms that the number is valid, hasn’t been recycled recently, and belongs to the current SIM holder. That confirmation is then bound into a receipt that can be audited later.
 
@@ -68,12 +68,12 @@ Think of it as a **network-signed certificate of identity**: when someone signs 
 ```
 /src
   /routes
-    verifyRouter.ts
-    simSwapRouter.ts
-    numberVerificationRouter.ts
+    verify.ts
   /services
-    numberVerificationService.ts
-    receiptService.ts
+    numberVerification.ts
+    telcoApi.ts
+  /utils
+    receiptGenerator.ts
   index.ts
 ```
 
